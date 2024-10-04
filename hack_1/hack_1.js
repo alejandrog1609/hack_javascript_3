@@ -8,9 +8,12 @@ const axios = require("axios");
 */
 
 async function fnTest() {
-    const url = 'url - endpoint';
-    //...
-    return response;
-}
+    try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/users/1');
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
 module.exports = fnTest;

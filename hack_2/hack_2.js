@@ -1,3 +1,4 @@
+const axios = require("axios");
 /*
 - Mediante la libreria: axios
 - Hacer una petición de tipo: POST
@@ -6,8 +7,11 @@
 */
 
 async function fnTest() {
-  //...
-  return response;
+  try {
+    const response = await axios.post('https://jsonplaceholder.typicode.com/posts');
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
 }
-
 module.exports = fnTest;
